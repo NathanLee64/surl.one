@@ -1,0 +1,18 @@
+name: Auto Delete Redirects
+
+on:
+  schedule:
+  - cron: '*/1 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git rm -r c
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Auto Deleted Redirects"
+          git push
