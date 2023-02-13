@@ -31,8 +31,8 @@ jobs:
       - run: |
           mkdir ${{ github.event.inputs.id }}
           cd ${{ github.event.inputs.id }}
-          echo "<meta http-equiv="refresh" content="0; url='${{ github.event.inputs.url }}'" />" > index.html
-          date > DateGenerated.txt
+          printf "<meta http-equiv="refresh" content="0; url='${{ github.event.inputs.url }}'" />" > index.html
+          date > date.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
