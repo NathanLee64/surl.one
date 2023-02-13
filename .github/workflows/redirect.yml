@@ -29,8 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          mkdir ${{ github.event.inputs.id }}
-          cd ${{ github.event.inputs.id }}
+          mkdir c/${{ github.event.inputs.id }}
+          cd c/${{ github.event.inputs.id }}
           echo "<meta http-equiv=\"refresh\" content=\"0; url='${{ github.event.inputs.url }}'\" />" > index.html
           date > date.txt
           git config user.name github-actions
