@@ -29,7 +29,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          mkdir u
           cd u
           mkdir ${{ github.event.inputs.id }}
           cd ${{ github.event.inputs.id }}
@@ -40,3 +39,4 @@ jobs:
           git add .
           git commit -m "generated"
           git push
+# old runs: mkdir u
